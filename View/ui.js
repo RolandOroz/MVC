@@ -8,10 +8,9 @@ export default class UI {
     }
 
     //adding elements to HTML
-    createEl(elem, elId, querySelect, text) {
+    createEl(elem, elId, querySelect) {
         let el = document.createElement(elem);
         el.id = elId;
-        el.innerHTML = text;
         document.querySelector(querySelect).append(el);
         return el;
     }
@@ -21,8 +20,14 @@ export default class UI {
         el.className=elClassName;
         return this;
     }
-}
+    addTextToEl(querySelect, txt){
+        let el = document.querySelector(querySelect);
+        el.innerHTML=txt;
+        return this;
+    }
 
+
+}
 
 
 class TableUser {
@@ -77,14 +82,76 @@ class TableUser {
 }
 
 
+class FormUsers {
+    constructor() {
+    }
+
+    createEl(elem, elId, querySelect) {
+
+        return UI.prototype.createEl(elem, elId, querySelect);
+    }
+    createForm(elem, elId, querySelect) {
+        return UI.prototype.createEl(elem, elId, querySelect)
+
+    }
+
+    init(querySelEl, formId) {
+
+        let divEl = document.querySelector(querySelEl)
+        let formEl = document.createElement('form');
+        formEl.id = formId;
+
+
+        divEl.append(formEl);
+
+    }
+    createInputWithLabel(formId, classN, forLabel, txt) {
+    let formEl = document.querySelector(formId);
+    let labelEl = document.createElement('label');
+    labelEl.innerHTML = txt;
+    labelEl.setAttribute('for', forLabel)
+    labelEl.className = classN;
+    let inputEl = document.createElement('input');
+    inputEl.className = classN;
+
+
+    formEl.append(labelEl);
+    labelEl.append(inputEl);
+    }
+
+    setAtributeToEl(querySel, attribType, attribValue, txt) {
+        let el = document.querySelector(querySel);
+        el.setAttribute(attribType, attribValue);
+        el.innerHTML = `${txt}`;
+    }
+
+}
+
+
+
+let uzi = new FormUsers()
+uzi.createEl('div', 'formDiv', 'body')
+
 
 let table = new TableUser(userArray, userArray);
 table.init();
 
 
 let z = new UI()
-z.createEl('div', 'divAdd', '#test', 'divADD');
+z.createEl('div', 'divBtnAdd', 'body');
+z.createEl('button', 'btnAdd','#divBtnAdd');
+z.addTextToEl('#btnAdd', 'Add');
+z.createEl('div', 'userFormWrapper', 'body');
 
+let formUser = new FormUsers()
+formUser.init('#userFormWrapper', 'userForm')
+
+formUser.createInputWithLabel('#userForm','formUser', 'firstName')
+formUser.setAtributeToEl('.formUser', 'type', 'text', 'First Name:')
+//formUser.createInputWithLabel('#userForm','formUser')
+// formUser.createInputWithLabel('#userForm','formUser')
+// formUser.createInputWithLabel('#userForm','formUser')
+// formUser.createInputWithLabel('#userForm','formUser')
 
 
 

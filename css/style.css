@@ -1,10 +1,13 @@
 /*TEST*/
-.NEWCLASS {
+#btnAdd {
+    position: absolute;
+    top: 5%;
+    right: 10%;
     background-color: green;
 }
 
 
-#tbody, table, th ,td {
+#tbody, table ,td {
     text-align: left;
     border: 1px solid black;
     color: black;
@@ -22,8 +25,13 @@ th:hover, td:hover {
 }
 
 .th_header_dynamic {
+    text-align: center;
+    border: 1px solid black;
     color: blue;
+    padding: 5px;
+    margin: 5px;
     font-weight: bold;
+    border-collapse: collapse;
 }
 
 .edit_btn {
