@@ -1,4 +1,4 @@
-import {userArray} from "./userArray.js";
+import {userArray} from "../Model/userArray.js";
 
 //UI class
 export default class UI {
@@ -54,6 +54,8 @@ class TableUser {
     }
 
 }
+
+
 
 let table = new TableUser(userArray);
 table.init();
