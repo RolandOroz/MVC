@@ -25,3 +25,18 @@ th:hover, td:hover {
     color: blue;
     font-weight: bold;
 }
+
+.edit_btn {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    margin: 5px;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    border-collapse: collapse;
+}
+
+.edit_btn:hover {
+    margin: 5px;
+    border-radius: 5px;
+}

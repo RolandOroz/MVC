@@ -26,8 +26,9 @@ export default class UI {
 
 
 class TableUser {
-    constructor(tableHeadersNamesArray) {
+    constructor(tableHeadersNamesArray, tableBodyNamesArray) {
         this.tableHeadersNamesArray = Object.keys(tableHeadersNamesArray[0]);
+        this.tableBodyNamesArray = tableBodyNamesArray;
     }
 
     // auto table creation (table header & table body)
@@ -55,7 +56,7 @@ class TableUser {
 
         divEl.append(tableEl);
 
-        userArray.forEach(user => {
+        this.tableBodyNamesArray.forEach(user => {
             let row = document.createElement('tr');
             let btn = document.createElement('button');
             btn.innerText = 'Edit';
@@ -77,7 +78,7 @@ class TableUser {
 
 
 
-let table = new TableUser(userArray);
+let table = new TableUser(userArray, userArray);
 table.init();
 
 
