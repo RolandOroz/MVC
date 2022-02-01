@@ -38,6 +38,8 @@ class TableUser {
         let tableEl = document.createElement('table');
         let tableRowEl = document.createElement('tr');
         let tableHeadEl = document.createElement('thead');
+        let tableBodyEl = document.createElement('tbody');
+
 
         //iterates over all strings in the tableHeadersNamesArray
         this.tableHeadersNamesArray.forEach(item => {
@@ -49,8 +51,26 @@ class TableUser {
 
         tableHeadEl.append(tableRowEl);
         tableEl.append(tableHeadEl);
+        tableEl.append(tableBodyEl);
 
         divEl.append(tableEl);
+
+        userArray.forEach(user => {
+            let row = document.createElement('tr');
+            let btn = document.createElement('button');
+            btn.innerText = 'Edit';
+            btn.setAttribute('class', 'edit_btn');
+
+            Object.values(user).forEach(text => {
+                let cell = document.createElement('td');
+                let textNode = document.createTextNode(text);
+
+                cell.appendChild(textNode);
+                row.appendChild(cell);
+                row.appendChild(btn);
+            })
+            tableBodyEl.appendChild(row);
+        });
     }
 
 }
@@ -59,6 +79,7 @@ class TableUser {
 
 let table = new TableUser(userArray);
 table.init();
+
 
 
 let z = new UI()
