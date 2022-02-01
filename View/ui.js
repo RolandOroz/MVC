@@ -118,7 +118,7 @@ class FormUsers {
     formEl.append(labelEl);
     labelEl.append(inputEl);
     }
-
+//TODO change *************************************
     setAtributeToEl(querySel, attribType, attribValue, txt) {
         let el = document.querySelector(querySel);
         el.setAttribute(attribType, attribValue);
