@@ -82,7 +82,6 @@ let table = new TableUser(userArray, userArray);
 table.init();
 
 
-
 let z = new UI()
 z.createEl('div', 'divAdd', '#test', 'divADD');
 
