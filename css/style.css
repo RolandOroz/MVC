@@ -1,0 +1,27 @@
+/*TEST*/
+.NEWCLASS {
+    background-color: green;
+}
+
+
+#tbody, table, th ,td {
+    text-align: left;
+    border: 1px solid black;
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    border-collapse: collapse;
+}
+tr:hover {
+    cursor: pointer;
+    background: #ECE9E9FF;
+}
+
+th:hover, td:hover {
+    background: #BEBCBCFF;
+}
+
+.th_header_dynamic {
+    color: blue;
+    font-weight: bold;
+}

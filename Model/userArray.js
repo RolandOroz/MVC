@@ -1,5 +1,5 @@
 //static data
-let inputArr = [
+export let userArray = [
     {
         firstName: 'Roland',
         lastName: 'Oroz',
@@ -48,4 +48,4 @@ let inputArr = [
         address: 'Goofyway 2',
         dob: '1996-11-23'
     }
-];
+]
